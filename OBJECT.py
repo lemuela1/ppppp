@@ -1,4 +1,5 @@
 import decryption
+import encryption
 import read_account_file
 import main
 
@@ -6,6 +7,7 @@ import main
 class account_holder:
     Admin = 0
     Official = 0
+    accounts = []
 
     def __init__(self, name, phone_number, address, account_number, account_password, DICT, balance, status):
         self.name = name
@@ -17,64 +19,140 @@ class account_holder:
         self.status = status
         self.DICT = DICT
 
+    def deposit_money(self):
+
+        deposit_amount = input("How much you want to deposit?:\n")
+        account_number = self.account_number
+        Index_num = self.accounts.index(account_number)
+        Line = Index_num * 11 + 8
+        Keyfile = open('account_file.txt', 'r')
+        ignore_content = ''
+        try:
+            initial_content = Keyfile.read()
+            Keyfile.seek(0)
+            for each in range(Line):
+                ignore_content += Keyfile.readline()
+        finally:
+            Keyfile.close()
+        initial_balance = read_account_file.account_information_get(account_number)[3]
+        content = initial_content.replace(ignore_content, '')
+        mod_content = content.replace(
+            f'{encryption.Encryption(initial_balance, self.DICT)}',
+            f'{encryption.Encryption(str(int(initial_balance) + int(deposit_amount)), self.DICT)}',
+            1
+        )
+        mod_data = ignore_content + mod_content
+
+        Keyfile = open('account_file.txt', 'w')
+        try:
+            Keyfile.write(mod_data)
+        finally:
+            Keyfile.close()
+
+    def withdraw_money(self):
+
+        deposit_amount = input("How much you want to withdraw?:\n")
+        account_number = self.account_number
+        Index_num = self.accounts.index(account_number)
+        Line = Index_num * 11 + 8
+        Keyfile = open('account_file.txt', 'r')
+        ignore_content = ''
+        try:
+            initial_content = Keyfile.read()
+            Keyfile.seek(0)
+            for each in range(Line):
+                ignore_content += Keyfile.readline()
+        finally:
+            Keyfile.close()
+        initial_balance = read_account_file.account_information_get(account_number)[3]
+        if int(initial_balance) - int(deposit_amount) < 0:
+            print("\nYou don't have enough money.\n")
+            return
+        content = initial_content.replace(ignore_content, '')
+        mod_content = content.replace(
+            f'{encryption.Encryption(initial_balance, self.DICT)}',
+            f'{encryption.Encryption(str(int(initial_balance) - int(deposit_amount)), self.DICT)}',
+            1
+        )
+        mod_data = ignore_content + mod_content
+
+        Keyfile = open('account_file.txt', 'w')
+        try:
+            Keyfile.write(mod_data)
+        finally:
+            Keyfile.close()
+
+    def check_balance(self):
+        balance = read_account_file.account_information_get(self.account_number)[3]
+        print(balance)
+
+    def change_password(self):
+        Old_password = input("please enter your previous password:\n")
+        if Old_password != self.account_password:
+            print('password incorrect, please try again.\n')
+            return
+
+        New_password = input("please enter your new password:")
+        account_number = self.account_number
+        Index_num = self.accounts.index(account_number)
+        Line = Index_num * 11 + 2
+        Keyfile = open('account_file.txt', 'r')
+        ignore_content = ''
+        try:
+            initial_content = Keyfile.read()
+            Keyfile.seek(0)
+            for each in range(Line):
+                ignore_content += Keyfile.readline()
+        finally:
+            Keyfile.close()
+        content = initial_content.replace(ignore_content, '')
+        mod_content = content.replace(
+            f'{encryption.Encryption(Old_password, self.DICT)}',
+            f'{encryption.Encryption(New_password, self.DICT)}',
+            1
+        )
+        mod_data = ignore_content + mod_content
+
+        Keyfile = open('account_file.txt', 'w')
+        try:
+            Keyfile.write(mod_data)
+        finally:
+            Keyfile.close()
+
+    def menu(self):
+        instruction = int(input(
+            "What can I help you today?\n"
+            "1, deposit money\n"
+            "2, withdraw money\n"
+            '3, check balance\n'
+            '4, change password\n'
+            "5, Quit\n"
+        ))
+
+        if instruction == 1:
+            self.deposit_money()
+        elif instruction == 2:
+            self.withdraw_money()
+        elif instruction == 3:
+            self.check_balance()
+        elif instruction == 4:
+            self.change_password()
+        elif instruction == 5:
+            return 'Quit'
+        else:
+            print('Please enter valid instruction.')
+            return
+
 
 class Bank_official(account_holder):
     Official = 1
 
-
-class System_administrator(account_holder):
-    Admin = 1
-
-    def change_password(self, new_password):
-        self.account_password = new_password
-
-        Keyfile = open('account_file.txt', 'w+')
-        try:
-            pass
-
-        finally:
-            Keyfile.close()
-        print("Password changed successfully.")
-
-
-import json, getpass
-from datetime import datetime
-
-
-class BearBank:
-    def __init__(self):
-        self.accounts = []
-
-    def load_data(self):  # FINISHED
-        self.accounts.extend(read_account_file.Account_Loading())
-
-    def save_data(self):
-        data = {'accounts': self.accounts, 'customers': self.customers}
-        with open('bear_bank_data.json', 'w') as file:
-            json.dump(data, file, indent=2)
-
-    def display_menu(self):  # FIN
-        print("1. Open Account (Bank Official Only)")
-        print("2. Close Account (Bank Official Only)")
-        print("3. Deposit Money")
-        print("4. Search Accounts(Bank Official Only)")
-        print("5. Change Password")
-        print("6. Check Transactions")
-        print("7. Quit")
-
     def open_account(self):  # Fin
-        if current_user.Official == 0:
-            print("Only bank officials can open an account.")
-            return
-
+        if self.Official != '1':
+            print('Please stop hacking!')
         main.Sign_up()
-        # opening_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        # opening_date removed because of issue of changing data.
 
     def close_account(self):  # Fin, need test
-        if current_user.Official == 0:
-            print("Only bank officials can close an account.")
-            return
         account_number = input("Enter account number to close: ")
         Index_num = self.accounts.index(account_number)
         if account_number in self.accounts is False:
@@ -93,7 +171,11 @@ class BearBank:
             Keyfile.close()
 
         content = initial_content.replace(ignore_content, '')
-        mod_content = content.replace('y', 'N', 1)
+        mod_content = content.replace(
+                encryption.Encryption('Y', read_account_file.ID_get(account_number)),
+                encryption.Encryption('N', read_account_file.ID_get(account_number)),
+                1
+        )
         mod_data = ignore_content + mod_content
 
         Keyfile = open('account_file.txt', 'w')
@@ -102,80 +184,128 @@ class BearBank:
         finally:
             Keyfile.close()
 
-        # account['closing_date'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-    def deposit_money(self):
-        account_number = input("Enter account number to deposit money: ")
-        for account in self.accounts:
-            if account['account_number'] == account_number and not account['closed']:
-                amount = float(input("Enter the amount to deposit: "))
-                customer_name = input("Enter your customer name: ")
-                customer_password = getpass.getpass("Enter your customer password: ")
-                if customer_name in self.customers and self.customers[customer_name] == customer_password:
-                    transaction = {'type': 'deposit', 'amount': amount,
-                                   'timestamp': datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
-                    account['transactions'].append(transaction)
-                    print(f"Successfully deposited {amount} into account {account_number}.")
-                    return
-                else:
-                    print("Invalid customer name or password. Transaction aborted.")
-                    return
-        print(f"Account {account_number} not found or closed.")
-
-    def search_accounts(self):
-        if not self.is_bank_official:
-            print("Only Bank official can search for accounts.")
+    def reopen_account(self):  # Fin, need test
+        account_number = input("Enter account number to reopen: ")
+        Index_num = self.accounts.index(account_number)
+        if account_number in self.accounts is False:
+            print(f"Account {account_number} not found or already closed.")
             return
-        search_term = input("Enter account number, customer name, or phone number: ")
-        for account in self.accounts:
-            if not account['closed'] and (search_term in account['account_number'] or
-                                          search_term in account['customer_name']):
-                print(f"Account Number: {account['account_number']}")
-                print(f"Customer Name: {account['customer_name']}")
-                print(f"Opening Date: {account['opening_date']}")
-                if 'closing_date' in account:
-                    print(f"Closing Date: {account['closing_date']}")
-                    print(f"Closed By: {account['closed_by']}")
-                print("===")
 
-    def change_password(self):
-        user_id = input("Enter your user ID: ")
-        current_password = getpass.getpass("Enter your current password: ")
-        if user_id in self.customers and self.customers[user_id] == current_password:
-            new_password = getpass.getpass("Enter your new password: ")
-            self.customers[user_id] = new_password
-            print("Password changed successfully.")
+        Line = Index_num * 11 + 9
+        Keyfile = open('account_file.txt', 'r')
+        ignore_content = ''
+        try:
+            initial_content = Keyfile.read()
+            Keyfile.seek(0)
+            for each in range(Line):
+                ignore_content += Keyfile.readline()
+        finally:
+            Keyfile.close()
+
+        content = initial_content.replace(ignore_content, '')
+        mod_content = content.replace(
+            encryption.Encryption('N', read_account_file.ID_get(account_number)),
+            encryption.Encryption('Y', read_account_file.ID_get(account_number)),
+            1
+        )
+        mod_data = ignore_content + mod_content
+
+        Keyfile = open('account_file.txt', 'w')
+        try:
+            Keyfile.write(mod_data)
+        finally:
+            Keyfile.close()
+
+    def check_total_deposit(self):
+        pass
+
+    def Check_exist_account(self):
+        pass
+
+    def Search_account(self):
+        pass
+
+    def check_bank_account_info(self):
+        instruction = input(
+            "What do you want to check?\n\n"
+            "1, Check total deposit in our bank\n"
+            "2, Check all exist account and status\n"
+            "3, Search account\n"
+            "4, back\n"
+        )
+        if instruction == 1:
+            self.check_total_deposit()
+        elif instruction == 2:
+            self.Check_exist_account()
+        elif instruction == 3:
+            self.Search_account()
+        elif instruction == 4:
+            self.menu()
         else:
-            print("Invalid user ID or password. Password change aborted.")
+            print('Please enter valid instruction.')
+            self.check_bank_account_info()
 
-    def check_transactions(self):
-        account_number = input("Enter account number to check transactions: ")
-        for account in self.accounts:
-            if account['account_number'] == account_number and not account['closed']:
-                for transaction in account['transactions']:
-                    print(
-                        f"Type: {transaction['type']}, Amount: {transaction['amount']}, Time: {transaction['timestamp']}")
-                return
-        print(f"Account {account_number} not found or closed.")
+    def menu(self):
+
+        instruction = int(input(
+            "What can I help you today?\n"
+            "1, open_account\n"
+            "2, close_account\n"
+            '3, reopen_account\n'
+            '4, change password\n'
+            '5, check_bank_account_info\n'
+            "6, Quit\n"
+        ))
+        x = None
+        if instruction == 1:
+            self.open_account()
+        elif instruction == 2:
+            self.close_account()
+        elif instruction == 3:
+            self.reopen_account()
+        elif instruction == 4:
+            self.change_password()
+        elif instruction == 5:
+            self.check_bank_account_info()
+        elif instruction == 6:
+            return 'Quit'
+        else:
+            print('Please enter valid instruction.')
+            self.menu()
+
+
+class System_administrator(account_holder):
+    Admin = 1
+
+
+import getpass
+
+
+class BearBank:
+    def __init__(self):
+        self.accounts = []
+
+    def load_data(self):  # FINISHED
+        self.accounts.extend(read_account_file.Account_Loading())
 
     def login(self):  # FINISH COMBINATION
         print('Welcome to BearBank!\nPlease login.\n')
         user_id = input("Please enter your user ID: ")
         password = getpass.getpass("Please enter your password: ")
         user_status = read_account_file.Account_level(user_id)
-        if not read_account_file.account_status_get(user_status) == 'Y':
+        if not read_account_file.account_status_get(user_id) == 'Y':
             print('Your account has been lock by bank official,\n'
                   'Please Contact with Bank official.\n')
             return
 
         if user_id in self.accounts and read_account_file.match_password_in_file(user_id) == password:
             print(f"Welcome, {user_id}!")
-            # print(f"Last Login: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
         else:
             print("Invalid user ID or password. Login failed.")
 
         ### current_user log in ###
         global current_user
+
         if user_status == ['O', 'N']:
             info = read_account_file.account_information_get(user_id)
             current_user = account_holder(
@@ -215,29 +345,11 @@ class BearBank:
                 DICT=read_account_file.ID_get(user_id)
             )
 
+        current_user.accounts = self.accounts
+
     def run(self):
         self.load_data()
         self.login()
-        while True:
-            self.display_menu()
-            choice = input("Enter your choice: ")
-            if choice == '1':
-                self.open_account()
-            elif choice == '2':
-                self.close_account()
-            elif choice == '3':
-                self.deposit_money()
-            elif choice == '4':
-                self.search_accounts()
-            elif choice == '5':
-                self.change_password()
-            elif choice == '6':
-                self.check_transactions()
-            elif choice == '7':
-                self.save_data()
-                break
-            else:
-                print("Invalid choice. Please try again.")
 
 
 if __name__ == "__main__":

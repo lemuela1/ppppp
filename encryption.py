@@ -1,7 +1,7 @@
 ### Password check dictionary generator. ###
 ### x is the string that you wanna encryption, y encryption code dic. ###
 ### If there isn't a y dict, it will generate and return a dict. ###
-
+import read_account_file
 import random
 
 
@@ -13,21 +13,28 @@ def Encryption(x: str, y: dict = None) -> str and dict:
         return Str_return
 
     elif y is None:
-        code_list = [
-            '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_',
-            '+', '=', '-', 'Q', 'W', 'E', 'R', 'Y', 'U', 'I', 'O', 'P', '{', '[', ']', '}', '\\', '|', '\'', '\"', ':',
-            ';', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', ',', '.', '<', '>',
-            '/', '?', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l',
-            'z', 'x', 'c', 'v', 'b', 'n', 'm', ' '
-        ]
 
-        Original_list = code_list.copy()
+        # random ID generate
+        while True:
+            code_list = [
+                '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_',
+                '+', '=', '-', 'Q', 'W', 'E', 'R', 'Y', 'U', 'I', 'O', 'P', '{', '[', ']', '}', '\\', '|', '\'', '\"', ':',
+                ';', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', ',', '.', '<', '>',
+                '/', '?', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l',
+                'z', 'x', 'c', 'v', 'b', 'n', 'm', ' '
+            ]
 
-        random.shuffle(code_list)
+            Original_list = code_list.copy()
 
-        DIC = {}
-        for each in range(len(code_list)):
-            DIC.update({code_list[each]: Original_list[each]})
+            random.shuffle(code_list)
+
+            DIC = {}
+            for each in range(len(code_list)):
+                DIC.update({code_list[each]: Original_list[each]})
+
+            # prevent ID redundant
+            if DIC not in read_account_file.ID_Loading():
+                break
 
         Str_return = ''
         for each in x:

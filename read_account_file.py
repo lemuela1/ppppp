@@ -33,7 +33,7 @@ def Account_Loading():
     return Account_list
 
 
-def ID_Loading():
+def ID_Loading(need_decryption=False):
     myFile = open('account_file.txt', 'r')
     try:
         id_list = []
@@ -61,6 +61,12 @@ def ID_Loading():
 
     finally:
         myFile.close()
+
+    if need_decryption:
+        new_id_list = []
+        for STR in id_list:
+            new_id_list.append(decryption.Decryption(STR, is_ID=True))
+        return new_id_list
 
     return id_list
 
@@ -133,9 +139,10 @@ def account_information_get(account_number: str):
 
 def ID_get(account_number: str):
     account_list = Account_Loading()
-    ID_list = ID_Loading()
-    index_num = account_list.index(account_number)
-    return ID_list[index_num:-1]
+    Index_number = account_list.index(account_number)
+    Dict = decryption.Decryption(ID_Loading()[Index_number], is_ID=True)
+
+    return Dict
 
 
 def account_status_get(account_number: str):
@@ -155,4 +162,7 @@ def account_status_get(account_number: str):
 
 
 if __name__ == '__main__':
-    print(account_status_get('1059115847'))
+    for each in ID_Loading(need_decryption=True):
+        print(each, '\n')
+
+
