@@ -33,7 +33,7 @@ def Decryption(encrypted_data: str, decrypted_user_id: dict = None, is_ID: bool 
     elif is_ID:
         RETURN = {}
         for each in range(len(encrypted_data)):
-            RETURN.update({encrypted_data[each]: code_list[each]})
+            RETURN.update({code_list[each]: encrypted_data[each]})
 
     return RETURN
 
