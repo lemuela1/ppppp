@@ -1,6 +1,69 @@
 import decryption
 
 
+def raw_password_listing():
+    myFile = open('account_file.txt', 'r')
+    try:
+        Password_list = []
+        myFile.seek(0)
+        for each in range(2):
+            x = myFile.readline()
+            if x == 'EoF':
+                break
+        account_password = myFile.readline()
+        Password_list.append(account_password[17:-1])
+
+        Time_to_break = 0
+
+        while True:
+            for each in range(10):
+                x = myFile.readline()
+                if x == 'EoF':
+                    Time_to_break = 1
+                    break
+            account_password = myFile.readline()
+            Password_list.append(account_password[17:-1])
+            if Time_to_break == 1:
+                break
+        Password_list.pop()
+
+    finally:
+        myFile.close()
+
+    return Password_list
+
+
+def Name_listing():
+    myFile = open('account_file.txt', 'r')
+    try:
+        name_list = []
+        myFile.seek(0)
+
+        NAME = myFile.readline()
+        name_list.append(decryption.Decryption(NAME[5:-1], is_special=True))
+
+        Time_to_break = 0
+
+        while True:
+            for each in range(10):
+                x = myFile.readline()
+                if x == 'EoF':
+                    Time_to_break = 1
+                    break
+            NAME = myFile.readline()
+            if NAME == 'EoF':
+                Time_to_break =1
+                break
+
+            name_list.append(decryption.Decryption(NAME[5:-1], is_special=True))
+            if Time_to_break == 1:
+                break
+    finally:
+        myFile.close()
+
+    return name_list
+
+
 def Account_Loading():
     myFile = open('account_file.txt', 'r')
     try:
@@ -11,7 +74,7 @@ def Account_Loading():
             if x == 'EoF':
                 break
         Account_number = myFile.readline()
-        Account_list.append(Account_number[15:-1])
+        Account_list.append(decryption.Decryption(Account_number[15:-1], is_special=True))
 
         Time_to_break = 0
 
@@ -22,7 +85,7 @@ def Account_Loading():
                     Time_to_break = 1
                     break
             Account_number = myFile.readline()
-            Account_list.append(Account_number[15:-1])
+            Account_list.append(decryption.Decryption(Account_number[15:-1], is_special=True))
             if Time_to_break == 1:
                 break
         Account_list.pop()
@@ -120,11 +183,11 @@ def account_information_get(account_number: str):
     try:
         for each in range(Line):
             myFile.readline()
-        information_list.append(decryption.Decryption(myFile.readline()[5:-1], Dict))
+        information_list.append(decryption.Decryption(myFile.readline()[5:-1], is_special=True))
         myFile.readline()
         myFile.readline()
         information_list.append(decryption.Decryption(myFile.readline()[8:-1], Dict))
-        information_list.append(decryption.Decryption(myFile.readline()[13:-1], Dict))
+        information_list.append(decryption.Decryption(myFile.readline()[13:-1], is_special=True))
         myFile.readline()
         myFile.readline()
         myFile.readline()
@@ -161,8 +224,28 @@ def account_status_get(account_number: str):
     return status
 
 
+def Name_get(account_number: str, inverse=False):
+    account_list = Account_Loading()
+    name_list = Name_listing()
+    if inverse:
+        return account_list[name_list.index(account_number)]
+    return name_list[account_list.index(account_number)]
+
+
+def password_get(account_number: str):
+    account_list = Account_Loading()
+    password_list = raw_password_listing()
+    Dict = ID_get(account_number)
+    return decryption.Decryption(password_list[account_list.index(account_number)], Dict)
+
+
+
+
 if __name__ == '__main__':
-    for each in ID_Loading(need_decryption=True):
-        print(each, '\n')
+    # print(Account_Loading())
+    # print(account_information_get('admin'))
+    # print(Name_listing())
+    # print(Name_get('228813976'))
+    print(raw_password_listing())
 
 

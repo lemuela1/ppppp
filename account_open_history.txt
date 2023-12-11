@@ -1,0 +1,25 @@
+System administrator admin has opened a Bank official account O.
+nishishabima
+
+System Administrator shabi has disable a account C.
+nishishabima
+
+Bank_official official has reopened a user account R.
+nishishabima
+
+Bank_official official has opened a user account O.
+228813976
+
+Bank_official official has closed a user account C.
+nishishabima
+
+Bank_official official has reopened a user account R.
+nishishabima
+
+Bank_official official has closed a user account C.
+228813976
+
+Bank_official official has reopened a user account R.
+228813976
+
+EoF

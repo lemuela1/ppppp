@@ -1,5 +1,5 @@
-import encryption
 import decryption
+import encryption
 import File_storage
 import OBJECT
 import read_account_file
@@ -77,6 +77,7 @@ class BearBank:
                 status=info[4],
                 DICT=read_account_file.ID_get(user_id)
             )
+        print(read_account_file.ID_get(user_id))
 
         current_user.accounts = self.accounts
 
@@ -95,19 +96,21 @@ def Sign_up(classification=0):
         official = 1
         Admin = 0
     while True:
-        account_number_setup = input("Please enter your account number:")
-        if account_number_setup in read_account_file.Account_Loading():
+        account_number = encryption.Special_Encryption(input("Please enter your account number:"))
+        if account_number in read_account_file.Account_Loading():
             print("This account_name already exist, please try other names.")
         else:
+            account_number_setup = account_number
             break
     account_password_setup, DICT = encryption.Encryption(input("Please enter your account password:"))
-    account_name_setup = encryption.Encryption(input("Please enter your account name:"), DICT)
+    account_name_setup = encryption.Special_Encryption(input("Please enter your account name:"))
     account_address_setup = encryption.Encryption(input("Please enter your address:"), DICT)
-    account_phone_setup = encryption.Encryption(input("Please enter your phone number:"), DICT)
+    account_phone_setup = encryption.Special_Encryption(input("Please enter your phone number:"))
     File_storage.Sign_in_account_data(
         account_name_setup, account_number_setup, account_password_setup, account_address_setup, account_phone_setup,
         DICT, encryption.Encryption(str(Admin), DICT), encryption.Encryption(str(official), DICT)
     )
+    return decryption.Decryption(account_number, is_special=True)
 
 
 def main():

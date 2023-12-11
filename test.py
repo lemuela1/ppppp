@@ -4,4 +4,4 @@ import OBJECT
 import main
 
 if __name__ == '__main__':
-    main.Sign_up(1)
+    main.Sign_up(2)

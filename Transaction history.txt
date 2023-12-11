@@ -1,0 +1,11 @@
+User:admin deposited 3 in bank. (2023-12-10 16:34:50)
+User:admin deposited 2000 in bank. (2023-12-10 16:22:32)
+User:admin deposited 4000 in bank. (2023-12-10 15:56:45)
+User:adwd deposited 4000 in bank. (2023-12-10 15:56:45)
+User:casdc deposited 4000 in bank. (2023-12-10 15:56:45)
+User:zxcv deposited 4000 in bank. (2023-12-10 15:56:45)
+User:rasdfer deposited 4000 in bank. (2023-12-10 15:56:45)
+User:admin deposited 4324 in bank. (2023-12-10 15:56:45)
+
+
+total:5997
