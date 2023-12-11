@@ -378,6 +378,7 @@ class Bank_official(account_holder):
                         existing_account.append(account_number)
                         closed_account.remove(account_number)
                         status = ''
+                    y += 1
                 elif y == 3:
                     y = 1
 
