@@ -1,3 +1,10 @@
+#Bear Bank
+#Kamdyn Moody, kamdyn.moody@gmail.com
+#Parishrut Rajak, pr8428s@missouristate.edu
+#Dingzhen Yu, dy4874s@missouristate.edu
+
+
+
 import decryption
 import encryption
 import File_storage
