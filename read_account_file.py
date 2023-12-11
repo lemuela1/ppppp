@@ -243,9 +243,10 @@ def password_get(account_number: str):
 
 if __name__ == '__main__':
     # print(Account_Loading())
-    # print(account_information_get('admin'))
+    # print(account_information_get('228813976'))
     # print(Name_listing())
     # print(Name_get('228813976'))
-    print(raw_password_listing())
+    # print(raw_password_listing())
+    print(password_get('228813976'))
 
 

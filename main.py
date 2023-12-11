@@ -30,7 +30,7 @@ class BearBank:
 
         while True:
             if read_account_file.match_password_in_file(user_id) == password:
-                print(f"Welcome, {read_account_file.account_information_get(user_id)[0]}!")
+                print(f"\nWelcome, {read_account_file.account_information_get(user_id)[0]}!\n")
                 break
             else:
                 print("Wrong password. try it again.")
@@ -77,7 +77,6 @@ class BearBank:
                 status=info[4],
                 DICT=read_account_file.ID_get(user_id)
             )
-        print(read_account_file.ID_get(user_id))
 
         current_user.accounts = self.accounts
 

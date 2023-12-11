@@ -176,7 +176,7 @@ class account_holder:
         try:
             while True:
                 reading = myfile.readline()
-                if reading[5:len(self.account_number) + 5] == self.account_number:
+                if reading[5:len(self.name) + 5] == self.name:
                     return_str += reading
                 if reading[:5] == 'total':
                     break
@@ -515,7 +515,7 @@ class Bank_official(account_holder):
                 "1, open_account\n"
                 "2, close_account\n"
                 '3, reopen_account\n'
-                '4, change a user\'s password\n'
+                '4, change password\n'
                 '5, check_bank_account_info\n'
                 "6, Quit\n"
             ))
@@ -690,9 +690,10 @@ class System_administrator(account_holder):
         finally:
             Keyfile.close()
         content = initial_content.replace(ignore_content, '')
+        DICT = read_account_file.ID_get(account_number)
         mod_content = content.replace(
-            f'{encryption.Encryption(read_account_file.password_get(account_number), self.DICT)}',
-            f'{encryption.Encryption(New_password, self.DICT)}',
+            f'{encryption.Encryption(read_account_file.password_get(account_number), DICT)}',
+            f'{encryption.Encryption(New_password, DICT)}',
             1
         )
         mod_data = ignore_content + mod_content
@@ -725,7 +726,7 @@ class System_administrator(account_holder):
         elif instruction == 3:
             self.reopen_account()
         elif instruction == 4:
-            self.change_password()
+            self.Change_user_password()
         elif instruction == 5:
             return 'Quit'
         else:

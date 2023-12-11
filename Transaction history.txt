@@ -1,3 +1,6 @@
+User:Dingzhen Yu withdraw 5000 from bank. (2023-12-10 23:14:01)
+User:Dingzhen Yu deposited 3000 in bank. (2023-12-10 23:10:37)
+User:Dingzhen Yu deposited 4000 in bank. (2023-12-10 22:48:07)
 User:admin deposited 3 in bank. (2023-12-10 16:34:50)
 User:admin deposited 2000 in bank. (2023-12-10 16:22:32)
 User:admin deposited 4000 in bank. (2023-12-10 15:56:45)
@@ -8,4 +11,4 @@ User:rasdfer deposited 4000 in bank. (2023-12-10 15:56:45)
 User:admin deposited 4324 in bank. (2023-12-10 15:56:45)
 
 
-total:5997
+total:7997
