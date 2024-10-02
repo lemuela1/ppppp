@@ -1,14 +1,184 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0" version="24.7.14">
   <diagram name="Page-1" id="ptoELfsR_6bHmKTN98_-">
-    <mxGraphModel dx="1042" dy="531" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="773" dy="1975" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="HWKCFty0nFmSQc_gpmRv-1" value="Mental health issue" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="640" y="230" width="120" height="60" as="geometry" />
+        <mxCell id="HWKCFty0nFmSQc_gpmRv-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="HWKCFty0nFmSQc_gpmRv-1" target="HWKCFty0nFmSQc_gpmRv-26">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="410" y="60" as="targetPoint" />
+            <mxPoint x="230" y="230" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="100" y="50" />
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="HWKCFty0nFmSQc_gpmRv-3" value="Substance abuse" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="640" y="310" width="120" height="60" as="geometry" />
+        <mxCell id="HWKCFty0nFmSQc_gpmRv-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="HWKCFty0nFmSQc_gpmRv-1" target="HWKCFty0nFmSQc_gpmRv-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="100" y="560" />
+              <mxPoint x="230" y="560" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HWKCFty0nFmSQc_gpmRv-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="HWKCFty0nFmSQc_gpmRv-1" target="HWKCFty0nFmSQc_gpmRv-32">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="660" y="120" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="100" y="-140" />
+              <mxPoint x="790" y="-140" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HWKCFty0nFmSQc_gpmRv-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="HWKCFty0nFmSQc_gpmRv-1" target="HWKCFty0nFmSQc_gpmRv-48">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="130" y="470" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HWKCFty0nFmSQc_gpmRv-1" value="Mental health issue" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="40" y="310" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HWKCFty0nFmSQc_gpmRv-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="HWKCFty0nFmSQc_gpmRv-3" target="HWKCFty0nFmSQc_gpmRv-38">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="340" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HWKCFty0nFmSQc_gpmRv-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="HWKCFty0nFmSQc_gpmRv-3" target="HWKCFty0nFmSQc_gpmRv-35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HWKCFty0nFmSQc_gpmRv-3" value="Substance abuse" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="410" y="340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HWKCFty0nFmSQc_gpmRv-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="HWKCFty0nFmSQc_gpmRv-4" target="HWKCFty0nFmSQc_gpmRv-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="290" y="600" />
+              <mxPoint x="470" y="600" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HWKCFty0nFmSQc_gpmRv-13" value="Most of the individuals who suffer&lt;div&gt;from Trauma will develop addiction&lt;/div&gt;&lt;div&gt;to certain substances.&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="HWKCFty0nFmSQc_gpmRv-5">
+          <mxGeometry x="0.1071" y="1" relative="1" as="geometry">
+            <mxPoint x="1" y="-24" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HWKCFty0nFmSQc_gpmRv-4" value="Trauma" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="170" y="580" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HWKCFty0nFmSQc_gpmRv-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="HWKCFty0nFmSQc_gpmRv-6" target="HWKCFty0nFmSQc_gpmRv-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HWKCFty0nFmSQc_gpmRv-6" value="Physical Abuse" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="170" y="730" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HWKCFty0nFmSQc_gpmRv-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="HWKCFty0nFmSQc_gpmRv-8" target="HWKCFty0nFmSQc_gpmRv-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HWKCFty0nFmSQc_gpmRv-8" value="Emotional Abuse" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="330" y="730" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HWKCFty0nFmSQc_gpmRv-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="HWKCFty0nFmSQc_gpmRv-9" target="HWKCFty0nFmSQc_gpmRv-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HWKCFty0nFmSQc_gpmRv-9" value="Psychological Abuse" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="10" y="730" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HWKCFty0nFmSQc_gpmRv-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="HWKCFty0nFmSQc_gpmRv-26" target="HWKCFty0nFmSQc_gpmRv-35">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="470" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HWKCFty0nFmSQc_gpmRv-30" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: nowrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;&quot;&gt;59% of young people who suffer from PTSD&lt;/span&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: nowrap; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;will suffer from substance abuse problems.&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="HWKCFty0nFmSQc_gpmRv-29">
+          <mxGeometry x="0.0967" y="-4" relative="1" as="geometry">
+            <mxPoint x="4" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HWKCFty0nFmSQc_gpmRv-26" value="PTSD" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="410" y="20" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HWKCFty0nFmSQc_gpmRv-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="HWKCFty0nFmSQc_gpmRv-32" target="HWKCFty0nFmSQc_gpmRv-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="790" y="370" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HWKCFty0nFmSQc_gpmRv-34" value="Individual with ADHD will rely on drugs&lt;div&gt;to help them to stay focus.&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="HWKCFty0nFmSQc_gpmRv-33">
+          <mxGeometry x="-0.4945" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HWKCFty0nFmSQc_gpmRv-32" value="ADHD" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="730" y="110" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HWKCFty0nFmSQc_gpmRv-35" value="drug and alcohol abuse" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="410" y="190" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HWKCFty0nFmSQc_gpmRv-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="HWKCFty0nFmSQc_gpmRv-38" target="HWKCFty0nFmSQc_gpmRv-1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="270" y="260" />
+              <mxPoint x="130" y="260" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HWKCFty0nFmSQc_gpmRv-41" value="individual who suffers from Substance Abuse&lt;div&gt;also suffer from serious mental illness.&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="HWKCFty0nFmSQc_gpmRv-39">
+          <mxGeometry x="-0.5026" y="-4" relative="1" as="geometry">
+            <mxPoint y="17" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HWKCFty0nFmSQc_gpmRv-38" value="Major depression&lt;div&gt;Schizophrenia&lt;/div&gt;&lt;div&gt;Bipolar disorder&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="210" y="340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HWKCFty0nFmSQc_gpmRv-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="HWKCFty0nFmSQc_gpmRv-42" target="HWKCFty0nFmSQc_gpmRv-35">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="240" y="220" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HWKCFty0nFmSQc_gpmRv-42" value="Environment surrounded by drugs and alcohol use." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="180" y="110" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HWKCFty0nFmSQc_gpmRv-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="HWKCFty0nFmSQc_gpmRv-44" target="HWKCFty0nFmSQc_gpmRv-35">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="650" y="220" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HWKCFty0nFmSQc_gpmRv-46" value="50% of risk for drug and alcohol addiction&lt;div&gt;come from people&#39;s genetic make up&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="HWKCFty0nFmSQc_gpmRv-45">
+          <mxGeometry x="-0.0088" y="-2" relative="1" as="geometry">
+            <mxPoint y="-19" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HWKCFty0nFmSQc_gpmRv-44" value="Genetic makeup" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="590" y="20" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HWKCFty0nFmSQc_gpmRv-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="HWKCFty0nFmSQc_gpmRv-48" target="HWKCFty0nFmSQc_gpmRv-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HWKCFty0nFmSQc_gpmRv-53" value="Untreated mental illness can lead to&lt;div&gt;feeling of being overwhelmed or in pain.&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="HWKCFty0nFmSQc_gpmRv-51">
+          <mxGeometry x="-0.4587" y="1" relative="1" as="geometry">
+            <mxPoint x="43" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HWKCFty0nFmSQc_gpmRv-48" value="Pain release addiction" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="140" y="440" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HWKCFty0nFmSQc_gpmRv-54" value="&lt;b&gt;About this diagram&lt;/b&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="550" width="320" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="HWKCFty0nFmSQc_gpmRv-55" value="Because The relationship between Substance abuse and Mental health issue are highly correlated, therefore this diagram is bidireactional.&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="HWKCFty0nFmSQc_gpmRv-54">
+          <mxGeometry y="30" width="320" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="HWKCFty0nFmSQc_gpmRv-56" value="Red Rectangles are the severe illness of individual." style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="HWKCFty0nFmSQc_gpmRv-54">
+          <mxGeometry y="100" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="HWKCFty0nFmSQc_gpmRv-57" value="Blue Rectangles are all of the External factors." style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="HWKCFty0nFmSQc_gpmRv-54">
+          <mxGeometry y="130" width="320" height="50" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
